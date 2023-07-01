@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Data</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    // Función para actualizar los datos en la página
+    function updateData(data) {
+      $("#weather-main").text(data.weather_main);
+      $("#temperature").text(data.temp);
+      $("#country").text(data.country);
+      $("#city").text(data.name);
+    }
+
+    // Realizar una solicitud GET al servidor Flask para obtener los datos actualizados
+    function fetchData() {
+      $.get("/current_data", function(data) {
+        // Actualizar los datos en la página
+        updateData(data);
+      });
+    }
+
+    // Actualizar los datos automáticamente cada 5 segundos
+    setInterval(fetchData, 5000);
+  </script>
+</head>
+<body>
+  <h1>Weather Data</h1>
+  <div>
+    <h2>Current Weather</h2>
+    <p><strong>Weather Main:</strong> <span id="weather-main"></span></p>
+    <p><strong>Temperature:</strong> <span id="temperature"></span></p>
+    <p><strong>Country:</strong> <span id="country"></span></p>
+    <p><strong>City:</strong> <span id="city"></span></p>
+  </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Data</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    // Función para actualizar los datos en la página
+    function updateData(data) {
+      $("#weather-main").text(data.weather_main);
+      $("#temperature").text(data.temp);
+      $("#country").text(data.country);
+      $("#city").text(data.name);
+    }
+
+    // Realizar una solicitud GET al servidor Flask para obtener los datos actualizados
+    function fetchData() {
+      $.get("/current_data", function(data) {
+        // Actualizar los datos en la página
+        updateData(data);
+      });
+    }
+
+    // Actualizar los datos automáticamente cada 5 segundos
+    setInterval(fetchData, 5000);
+  </script>
+</head>
+<body>
+  <h1>Weather Data</h1>
+  <div>
+    <h2>Current Weather</h2>
+    <p><strong>Weather Main:</strong> <span id="weather-main"></span></p>
+    <p><strong>Temperature:</strong> <span id="temperature"></span></p>
+    <p><strong>Country:</strong> <span id="country"></span></p>
+    <p><strong>City:</strong> <span id="city"></span></p>
+  </div>
+</body>
+</html>
